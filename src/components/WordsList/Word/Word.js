@@ -5,10 +5,10 @@ export default class Word extends React.Component {
         console.log(this.props.word)
         return (
             <li>
-                <span>{this.props.word.original}</span>
-                <span>{this.props.word.translation}</span>
-                <span>{this.props.word.correct_count}</span>
-                <span>{this.props.word.incorrect_count}</span>
+                <span className='original'>{this.props.word.original}</span>
+                <span className='translation'>{this.props.word.translation}</span>
+                <span className='correct_count'>{this.props.word.correct_count}</span>
+                <span className='incorrect_count'>{this.props.word.incorrect_count}</span>
             </li>
         )
     }
