@@ -3,6 +3,7 @@ import config from '../../config'
 import Button from '../../components/Button/Button';
 import TokenService from '../../services/token-service'
 import WordsList from '../../components/WordsList/WordsList'
+import './DashboardRoute.css'
 
 class DashboardRoute extends Component {
   state = {
@@ -19,7 +20,6 @@ class DashboardRoute extends Component {
           words: obj.words,
           language: obj.language
         })
-        console.log(this.state.language)
       })
   }
 
