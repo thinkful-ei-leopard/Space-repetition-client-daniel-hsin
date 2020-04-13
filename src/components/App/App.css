@@ -16,9 +16,19 @@ body{
     -moz-osx-font-smoothing: grayscale;
 }
 
+main{
+    text-align: center;
+}
 h2{
     color: #ff5722;
 }
 
+@media screen and (min-width: 481px){
+   body{
+    text-align: left; 
+    font-family: 18px;
+   }
+   
+ }
   
  
