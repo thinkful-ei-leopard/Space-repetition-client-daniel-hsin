@@ -1,0 +1,24 @@
+*{
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+body{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #474744;
+    line-height: 1.5;
+    font-family: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2{
+    color: #ff5722;
+}
+
+  
+ 

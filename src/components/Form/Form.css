@@ -1,0 +1,29 @@
+form{
+    border: 3px solid #65eeb7;
+    border-radius: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+input{
+    margin: 15px;
+    border-radius: 5px;
+}
+label{
+    display: block;
+}
+input:focus {
+    border: 3px solid #5fcc9c;
+    background-color: #aaffc7;
+  }
+
+
+  @media screen and (min-width: 481px){
+    label{
+        display: inline-block;
+    }
+    form{
+        max-width: 526px;
+    }
+  }

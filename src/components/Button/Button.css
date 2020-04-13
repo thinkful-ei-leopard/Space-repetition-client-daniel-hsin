@@ -1,0 +1,16 @@
+button{
+    display: block;
+    margin: 10px auto;
+    padding: 5px 8px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #5fcc9c; 
+}
+
+
+  @media screen and (min-width: 481px){
+    button:hover {
+        background-color: #5fcc9c; 
+        color: #474744;
+      } 
+  }
