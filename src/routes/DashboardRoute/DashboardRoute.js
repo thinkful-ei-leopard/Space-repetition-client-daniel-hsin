@@ -4,6 +4,7 @@ import Button from '../../components/Button/Button';
 import TokenService from '../../services/token-service'
 import WordsList from '../../components/WordsList/WordsList'
 import './DashboardRoute.css'
+import { Redirect } from 'react-router-dom'
 
 class DashboardRoute extends Component {
   state = {
@@ -34,11 +35,22 @@ class DashboardRoute extends Component {
         if (res.ok) {
           return res.json()
       }
+        else if (res === {
+          "error": "Unauthorized request"
+      }) {
+          this.handleUnauthorizedRequest()
+        }
         return Promise.reject('Error fetching language and words from server');
       })
       .catch(err => {
         this.setState({error: err})
       })
+    )
+  }
+
+  handleUnauthorizedRequest = () => {
+    return (
+    <Redirect to='/register'/>
     )
   }
 
