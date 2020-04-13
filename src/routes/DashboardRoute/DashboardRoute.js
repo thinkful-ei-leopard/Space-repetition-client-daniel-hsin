@@ -4,9 +4,11 @@ import Button from '../../components/Button/Button';
 import TokenService from '../../services/token-service'
 import WordsList from '../../components/WordsList/WordsList'
 import './DashboardRoute.css'
-import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import UserContext from '../../contexts/UserContext'
 
 class DashboardRoute extends Component {
+  static contextType = UserContext
   state = {
     error: null,
     words: [],
@@ -25,6 +27,7 @@ class DashboardRoute extends Component {
   }
 
   fetchWords = () => {
+    console.log(this.props)
     return (
       fetch(`${config.API_ENDPOINT}/language`, {
         headers: {
@@ -49,17 +52,18 @@ class DashboardRoute extends Component {
   }
 
   handleUnauthorizedRequest = () => {
-    return (
-    <Redirect to='/register'/>
-    )
+    this.props.history.push('/login')
+    this.context.processLogout()
   }
 
   render() {
     return (
       <section>
         <h2>Ready to Learn {this.state.language.name}?</h2>
-        <WordsList words={this.state.words}/>
-        <Button type='button'>START PRACTICING</Button>
+        <WordsList words={this.state.words} language={this.state.language}/>
+        <Link to='/learn'>
+          <Button type='button'>START PRACTICING</Button>
+        </Link>
       </section>
     );
   }
