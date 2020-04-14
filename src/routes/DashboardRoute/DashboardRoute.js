@@ -4,7 +4,6 @@ import './DashboardRoute.css';
 import Button from '../../components/Button/Button';
 import TokenService from '../../services/token-service'
 import WordsList from '../../components/WordsList/WordsList'
-import './DashboardRoute.css'
 import { Link } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
 
@@ -57,6 +56,8 @@ class DashboardRoute extends Component {
     this.context.processLogout()
   }
 
+
+
   render() {
     return (
       <section>
@@ -64,7 +65,7 @@ class DashboardRoute extends Component {
         <h2>Ready to Learn {this.state.language.name}?</h2>
         </div>
         <Link to='/learn'>
-        <Button type='button'>START PRACTICING</Button>
+        <Button type='button' >START PRACTICING</Button>
         </Link>
         <WordsList words={this.state.words} language={this.state.language}/>
       </section>

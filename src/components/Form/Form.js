@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import './Form.css'
-//Happy Monday!
+
 export function Label({ className, ...props }) {
   return (
     <label className={cx('Label', className)} {...props} />

@@ -1,5 +1,5 @@
 *{
-    background-color: #f4f4f4;
+    
     box-sizing: border-box;
 }
 body{
@@ -7,6 +7,7 @@ body{
     margin-right: auto;
     text-align: center;
     color: #474744;
+    background-color: #f4f4f4;
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -17,9 +18,12 @@ body{
 
 main{
     text-align: center;
+    
 }
 h2{
     color: #ff5722;
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
 }
 
 @media screen and (min-width: 481px){
