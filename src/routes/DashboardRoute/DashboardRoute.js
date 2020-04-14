@@ -63,10 +63,10 @@ class DashboardRoute extends Component {
         <div className='background'>
         <h2>Ready to Learn {this.state.language.name}?</h2>
         </div>
+        <Link to='/learn'>
         <Button type='button'>START PRACTICING</Button>
-        <WordsList words={this.state.words} language={this.state.language}/>
-        <Link to='/learn'> 
         </Link>
+        <WordsList words={this.state.words} language={this.state.language}/>
       </section>
     );
   }
