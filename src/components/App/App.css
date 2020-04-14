@@ -8,7 +8,6 @@ body{
     text-align: center;
     color: #474744;
     line-height: 1.5;
-    font-family: 16px;
     margin: 0;
     padding: 0;
     font-family: "Ubuntu", sans-serif;
@@ -25,8 +24,7 @@ h2{
 
 @media screen and (min-width: 481px){
    body{
-    text-align: left; 
-    font-family: 18px;
+    text-align: left;
    }
    
  }

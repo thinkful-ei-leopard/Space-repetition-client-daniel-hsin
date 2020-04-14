@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import config from '../../config'
+import './DashboardRoute.css';
 import Button from '../../components/Button/Button';
 import TokenService from '../../services/token-service'
 import WordsList from '../../components/WordsList/WordsList'
@@ -59,10 +60,12 @@ class DashboardRoute extends Component {
   render() {
     return (
       <section>
+        <div className='background'>
         <h2>Ready to Learn {this.state.language.name}?</h2>
+        </div>
+        <Button type='button'>START PRACTICING</Button>
         <WordsList words={this.state.words} language={this.state.language}/>
-        <Link to='/learn'>
-          <Button type='button'>START PRACTICING</Button>
+        <Link to='/learn'> 
         </Link>
       </section>
     );

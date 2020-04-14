@@ -1,3 +1,15 @@
+
+
 .words-list-ul {
     list-style: none;
+}
+ul{
+    padding-left:0 ;
+}
+ul span{
+    font-family: 'Alfa Slab One', cursive;
+}
+h3{
+    font-family: 'Roboto Slab', serif;
+    
 }

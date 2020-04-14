@@ -1,7 +1,52 @@
 .correct_count {
-    color: green;
+    color: rgb(5, 170, 5);
 }
 
 .incorrect_count {
-    color: red;
+    color: rgb(218, 23, 23);
+}
+li{
+    margin: 25px auto;
+    padding: 15px ;
+    background-color:  #f7dfdf;
+    
+}
+.count,li span{
+    display: inline-block;
+    background-color:  #f7dfdf;
+}
+
+.word{
+    font-size: 20px;
+    background-color:  #f7dfdf;
+}
+.original{
+   padding: 0 5px;
+   font-weight:bold;
+}
+.translation{
+    padding: 0 5px;  
+}
+
+@media screen and (min-width: 481px){
+    
+    li{
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px 15px 60px 15px;
+        background-color:  #f7dfdf;
+    }
+    .count,li span{
+        display: inline-block;
+        background-color: #f7dfdf;
+    }
+    .count{
+        float: right;  
+    }
+    .word{
+        float:left;
+        font-size: 25px;
+    }
+    
 }
