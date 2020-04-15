@@ -73,6 +73,17 @@ class LearningRoute extends Component {
      })
       
   }
+
+  handleNextWord=(event)=>{
+    event.preventDefault();
+    this.getWord()
+    .then( nextWord=> this.setState({
+      nextWord
+    }))
+    .catch(res => this.setState({
+      error:JSON.stringify(res.error)
+    }))
+  }
   
     
   render() {
@@ -86,7 +97,9 @@ class LearningRoute extends Component {
         </Label>
         <Input type='text' id='guessWord' name='guessWord' required></Input>
         <Button type='submit'>Submit </Button>
-         {answer && <h3>{answer}</h3>}
+        
+         {answer && <div><h3>{answer}</h3><Button onClick={this.handleNextWord} type='click'>Next word</Button></div>}
+
         <p>Current total score: {nextWord.totalScore}</p>
         <p className='correct_count'>Current correct count : {nextWord.wordCorrectCount}</p>
         <p className='incorrect_count'>Current incorrect count :  {nextWord.wordIncorrectCount}</p>
