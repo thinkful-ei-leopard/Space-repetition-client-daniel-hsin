@@ -41,11 +41,14 @@ class LearningRoute extends Component {
         },
         body: word,
       })
-      .then(res =>
-        (!res.ok)
-           ? res.json().then(e=> Promise.reject(e))
-           : res.json()
-        )
+      .then(res => {
+        if (!res.ok) {
+           return res.json().then(e=> Promise.reject(e))
+        }
+         return res.json()
+      })
+      .then(data => {
+        return data})
     }
     
   componentDidMount(){ 
