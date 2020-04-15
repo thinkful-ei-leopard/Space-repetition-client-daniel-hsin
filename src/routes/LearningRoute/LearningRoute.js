@@ -30,15 +30,16 @@ class LearningRoute extends Component {
     }
 
     postAns=(guessWord)=>{
+      let word = JSON.stringify({
+        guess: guessWord
+      })
       return fetch(`${config.API_ENDPOINT}/language/guess`, {
         method:'POST',
         headers: {
           'authorization': `bearer ${TokenService.getAuthToken()}`,
           'content-type': 'application/json'
         },
-        body:JSON.stringify(
-          guessWord
-        ),
+        body: word,
       })
       .then(res =>
         (!res.ok)
@@ -59,10 +60,8 @@ class LearningRoute extends Component {
 
   handleSubmit=(event)=>{
     event.preventDefault();
-    const {guessWord} = event.target
-    this.postAns({
-      guessWord: guessWord.value
-    })
+    const guessWord = event.target.guessWord.value
+    this.postAns(guessWord)
      .then(ans=>{
        guessWord.value=''  
      })
