@@ -100,9 +100,12 @@ class LearningRoute extends Component {
   render() {
     const{error, nextWord, answer, checkAns}=this.state
     let message = '' ;
+    let color = '' ;
     if(checkAns === true){
+       color= 'green';
        message ='Correct Answer!'
      }else{
+      color= 'red';
       message ='Wrong Answer!'
      }
      
@@ -118,7 +121,7 @@ class LearningRoute extends Component {
         <Button type='submit'>Submit </Button>
         
          
-         {answer && <div className='showAns'><h3>{message}</h3><h3>The Correct Answer is: {answer}</h3><Button onClick={this.handleNextWord} type='click'>Next word</Button></div>}
+         {answer && <div className='showAns'><h3 className={color}>{message}</h3><h3>The Correct Answer is: {answer}</h3><Button onClick={this.handleNextWord} type='click'>Next word</Button></div>}
 
         <p>Current total score: {nextWord.totalScore}</p>
         <p className='correct_count'>Current correct count : {nextWord.wordCorrectCount}</p>

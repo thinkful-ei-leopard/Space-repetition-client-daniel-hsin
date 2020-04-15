@@ -5,3 +5,9 @@ form{
 .showAns{
     margin: 50px 0;
 }
+.green{
+    color: green
+}
+.red{
+    color:red;
+}
