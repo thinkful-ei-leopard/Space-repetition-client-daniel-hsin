@@ -12,7 +12,8 @@ class LearningRoute extends Component {
   state={
     error:null,
     nextWord:'',
-    answer:null
+    answer:null,
+    checkAns:''
   }
 
   
@@ -48,7 +49,14 @@ class LearningRoute extends Component {
          return res.json()
       })
       .then(data => {
-        return data})
+        console.log(data)
+        this.setState({
+          answer:data.answer
+        })
+        this.setState({
+          checkAns:data.isCorrect
+        })
+      })
     }
     
   componentDidMount(){ 
@@ -66,7 +74,8 @@ class LearningRoute extends Component {
     const guessWord = event.target.guessWord.value
     this.postAns(guessWord)
      .then(ans=>{
-       guessWord.value=''  
+       guessWord.value=''
+      
      })
      .catch(res =>{
        this.setState({
@@ -89,8 +98,16 @@ class LearningRoute extends Component {
   
     
   render() {
-    const{error, nextWord, answer}=this.state
+    const{error, nextWord, answer, checkAns}=this.state
+    let message = '' ;
+    if(checkAns === true){
+       message ='Correct Answer!'
+     }else{
+      message ='Wrong Answer!'
+     }
+     
     return (
+    
       <section>
         {error && <p>{error}</p>}
         <form onSubmit={this.handleSubmit}>
@@ -100,7 +117,8 @@ class LearningRoute extends Component {
         <Input type='text' id='guessWord' name='guessWord' required></Input>
         <Button type='submit'>Submit </Button>
         
-         {answer && <div><h3>{answer}</h3><Button onClick={this.handleNextWord} type='click'>Next word</Button></div>}
+         
+         {answer && <div className='showAns'><h3>{message}</h3><h3>The Correct Answer is: {answer}</h3><Button onClick={this.handleNextWord} type='click'>Next word</Button></div>}
 
         <p>Current total score: {nextWord.totalScore}</p>
         <p className='correct_count'>Current correct count : {nextWord.wordCorrectCount}</p>
