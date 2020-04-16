@@ -42,7 +42,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1 className='title'>
+        <h1>
           <Link to='/'>
             Sermo
           </Link>

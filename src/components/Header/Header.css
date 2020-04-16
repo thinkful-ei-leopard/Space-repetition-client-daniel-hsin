@@ -50,7 +50,7 @@ h1{
     float: right;
     margin: 20px ;
   }
-  .title{
+  header h1{
     text-align: left;
     margin-left: 20px;
   }

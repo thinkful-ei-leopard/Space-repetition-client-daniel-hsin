@@ -75,18 +75,22 @@ class LearningRoute extends Component {
     this.postAns(guessWord)
      .then(ans=>{
        guessWord.value=''
-      
      })
      .catch(res =>{
        this.setState({
          error:JSON.stringify(res.error)
        })
      })
+     event.target.guessWord.value='';
       
   }
 
   handleNextWord=(event)=>{
     event.preventDefault();
+    this.setState({
+      answer:null
+    })
+    
     this.getWord()
     .then( nextWord=> this.setState({
       nextWord
