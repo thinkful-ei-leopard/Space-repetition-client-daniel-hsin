@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import UserContext from '../../contexts/UserContext'
-import { Input, Required, Label } from '../../components/Form/Form'
+import { Input, Label } from '../../components/Form/Form'
 import Button from '../../components/Button/Button'
 import './LearningRoute.css'
 
@@ -13,7 +13,9 @@ class LearningRoute extends Component {
     error:null,
     nextWord:'',
     answer:null,
-    checkAns:''
+    checkAns:'',
+    showForm:true,
+    guess:null
   }
 
   
@@ -72,6 +74,9 @@ class LearningRoute extends Component {
   handleSubmit=(event)=>{
     event.preventDefault();
     const guessWord = event.target.guessWord.value
+    this.setState({
+      guess:guessWord
+    })
     this.postAns(guessWord)
      .then(ans=>{
        guessWord.value=''
@@ -81,14 +86,19 @@ class LearningRoute extends Component {
          error:JSON.stringify(res.error)
        })
      })
-     event.target.guessWord.value='';
+    
+     this.setState({
+       showForm:false,
+     })
       
   }
 
   handleNextWord=(event)=>{
     event.preventDefault();
     this.setState({
-      answer:null
+      answer:null,
+      showForm:true,
+      guess:null
     })
     
     this.getWord()
@@ -102,36 +112,40 @@ class LearningRoute extends Component {
   
     
   render() {
-    const{error, nextWord, answer, checkAns}=this.state
+    const{error, nextWord, answer, checkAns, showForm, guess}=this.state
     let message = '' ;
     let color = '' ;
     if(checkAns === true){
        color= 'green';
-       message ='Correct Answer!'
+       message ='You were correct! :D'
      }else{
       color= 'red';
-      message ='Wrong Answer!'
+      message ='Good try, but not quite right :('
      }
      
     return (
-    
+      
       <section>
-        {error && <p>{error}</p>}
-        <form onSubmit={this.handleSubmit}>
-        <h2>{nextWord.nextWord}</h2>
-        <Label htmlFor='guessWord'>Your Answer<Required />
-        </Label>
-        <Input type='text' id='guessWord' name='guessWord' required></Input>
-        <Button type='submit'>Submit </Button>
         
+        {error && <p>{error}</p>}
+        {showForm && 
+        <form onSubmit={this.handleSubmit}>
+        <h2>Translate the word:</h2><span className='showWord'>{nextWord.nextWord}</span>
+        <Label htmlFor='learn-guess-input'>What's the translation for this word?
+        </Label><br></br>
+        <Input type='text' id='learn-guess-input' name='guessWord' value={guess} required></Input>
+        <Button type='submit'>Submit your answer</Button>
+        <p className='correct_count'> You have answered this word correctly {nextWord.wordCorrectCount} times.</p>
+        <p className='incorrect_count'>You have answered this word incorrectly {nextWord.wordIncorrectCount} times.</p>
+        </form>}
          
-         {answer && <div className='showAns'><h3 className={color}>{message}</h3><h3>The Correct Answer is: {answer}</h3><Button onClick={this.handleNextWord} type='click'>Next word</Button></div>}
-
-        <p>Current total score: {nextWord.totalScore}</p>
-        <p className='correct_count'>Current correct count : {nextWord.wordCorrectCount}</p>
-        <p className='incorrect_count'>Current incorrect count :  {nextWord.wordIncorrectCount}</p>
-        </form>
-      </section>
+         {answer && <div className='showAns'><h2 className={color}>{message}</h2><session className='DisplayFeedback'><p>The correct translation for {nextWord.nextWord} was {answer} and you chose {guess}!</p></session>
+         <Button onClick={this.handleNextWord} type='click'>Try another word!</Button></div>}
+        <section className='DisplayScore'>
+        <p>Your total score is: {nextWord.totalScore}</p>
+        </section>
+        </section>
+      
     );
   }
 }

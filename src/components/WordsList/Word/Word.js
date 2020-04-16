@@ -7,7 +7,7 @@ export default class Word extends React.Component {
         return (
             <li>
                 <div className='word'>
-                <span className='original'>{this.props.word.original}</span>
+                <h4 className='original'>{this.props.word.original}</h4>
                 <span className='translation'>{this.props.word.translation}</span>
                 </div>
                 <div className='count'>

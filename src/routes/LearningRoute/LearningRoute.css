@@ -11,3 +11,6 @@ form{
 .red{
     color:red;
 }
+.showWord{
+    display: block;
+}
