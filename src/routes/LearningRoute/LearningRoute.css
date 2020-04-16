@@ -11,15 +11,26 @@ form{
 .red{
     color:red;
 }
-.showWord{
-    color:#ff5722;
-    display: block;
+.one{
     font-weight: bolder;
     font-size: 25px;
+    margin: 5px;
+}
+.showWord{
+    display: block;
+    color:#ff5722;
 }
 .co{
     margin: 25px auto;
 }
+.ans{
+    color:#36c089;
+}
+
+.yourAns{
+   color: rgb(86, 125, 245);
+   
+}
 .DisplayFeedback{
-    
+    margin: 50px auto;
 }

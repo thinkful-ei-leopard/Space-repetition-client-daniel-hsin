@@ -15,7 +15,7 @@ class LearningRoute extends Component {
     answer:null,
     checkAns:'',
     showForm:true,
-    guess:null
+    guess:''
   }
 
   
@@ -98,7 +98,6 @@ class LearningRoute extends Component {
     this.setState({
       answer:null,
       showForm:true,
-      guess:null
     })
     
     this.getWord()
@@ -108,6 +107,13 @@ class LearningRoute extends Component {
     .catch(res => this.setState({
       error:JSON.stringify(res.error)
     }))
+  }
+
+  changeValue=(event)=>{
+    event.preventDefault();
+    this.setState({
+      guess: event.target.value
+    })
   }
   
     
@@ -130,16 +136,16 @@ class LearningRoute extends Component {
         {error && <p>{error}</p>}
         {showForm && 
         <form onSubmit={this.handleSubmit}>
-        <h2>Translate the word:</h2><span className='showWord'>{nextWord.nextWord}</span>
+        <h2>Translate the word:</h2><span className='one showWord'>{nextWord.nextWord}</span>
         <Label htmlFor='learn-guess-input'>What's the translation for this word?
         </Label><br></br>
-        <Input type='text' id='learn-guess-input' name='guessWord' value={guess} required></Input>
+        <Input type='text' id='learn-guess-input' name='guessWord' value={guess} onChange={this.changeValue} required></Input>
         <Button type='submit'>Submit your answer</Button>
         <p className='co correct_count'>You have answered this word correctly {nextWord.wordCorrectCount} times.</p>
         <p className='co incorrect_count'>You have answered this word incorrectly {nextWord.wordIncorrectCount} times.</p>
         </form>}
          
-         {answer && <div className='showAns'><h2 className={color}>{message}</h2><session className='DisplayFeedback'><p>The correct translation for {nextWord.nextWord} was {answer} and you chose {guess}!</p></session>
+         {answer && <div className='showAns'><h2 className={color}>{message}</h2><section className='DisplayFeedback'><p>The correct translation for <span className='one showWord'>{nextWord.nextWord}</span> was <span className='one ans'>{answer}</span> and you chose <span className='one yourAns'>{guess}</span>!</p></section>
          <Button onClick={this.handleNextWord} type='click'>Try another word!</Button></div>}
         <section className='DisplayScore'>
         <p>Your total score is: {nextWord.totalScore}</p>
