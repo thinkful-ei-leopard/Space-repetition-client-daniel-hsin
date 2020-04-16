@@ -51,7 +51,6 @@ class LearningRoute extends Component {
          return res.json()
       })
       .then(data => {
-        console.log(data)
         this.setState({
           answer:data.answer
         })

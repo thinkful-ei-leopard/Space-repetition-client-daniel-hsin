@@ -3,7 +3,6 @@ import './Word.css'
 
 export default class Word extends React.Component {
     render () {
-        console.log(this.props.word)
         return (
             <li>
                 <div className='word'>
