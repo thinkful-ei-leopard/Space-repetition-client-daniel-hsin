@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "spaced-repetition-sermo",
+    "name": "sermo",
+    "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+    ]
+  }
