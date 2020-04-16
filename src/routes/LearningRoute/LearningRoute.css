@@ -12,5 +12,14 @@ form{
     color:red;
 }
 .showWord{
+    color:#ff5722;
     display: block;
+    font-weight: bolder;
+    font-size: 25px;
+}
+.co{
+    margin: 25px auto;
+}
+.DisplayFeedback{
+    
 }

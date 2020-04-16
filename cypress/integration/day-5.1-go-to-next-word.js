@@ -34,13 +34,13 @@ describe(`User story: Go to next word`, function() {
   it(`displays another word after clicking the 'next' button`, () => {
     cy.get('main button').click()
 
-    cy.fixture('language-guess-generic.json')
+    cy.fixture('language-head.json')
       .then(languageHeadFixture => {
         cy.get('main').within($main => {
           cy.get('p').eq(0)
             .should(
               'have.text',
-              `Your total score is: ${languageHeadFixture.totalScore}`,
+              `You have answered this word correctly ${languageHeadFixture.wordCorrectCount} times.`,
             )
           cy.get('h2')
             .should('have.text', 'Translate the word:')

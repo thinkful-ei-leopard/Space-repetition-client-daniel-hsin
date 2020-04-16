@@ -9,6 +9,8 @@ form{
 input{
     margin: 15px;
     border-radius: 5px;
+    font-family: "Ubuntu", sans-serif;
+    color: #474744;
 }
 label{
     display: block;

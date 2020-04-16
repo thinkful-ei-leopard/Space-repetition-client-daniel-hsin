@@ -39,7 +39,7 @@ describe(`User story: Presented with word`, function() {
         cy.get('p').eq(0)
           .should(
             'have.text',
-            `Your total score is: ${languageHeadFixture.totalScore}`,
+            `You have answered this word correctly ${languageHeadFixture.wordCorrectCount} times.`,
           )
       })
   })

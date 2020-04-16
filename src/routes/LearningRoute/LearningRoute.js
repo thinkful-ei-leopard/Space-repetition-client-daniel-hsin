@@ -135,8 +135,8 @@ class LearningRoute extends Component {
         </Label><br></br>
         <Input type='text' id='learn-guess-input' name='guessWord' value={guess} required></Input>
         <Button type='submit'>Submit your answer</Button>
-        <p className='correct_count'> You have answered this word correctly {nextWord.wordCorrectCount} times.</p>
-        <p className='incorrect_count'>You have answered this word incorrectly {nextWord.wordIncorrectCount} times.</p>
+        <p className='co correct_count'>You have answered this word correctly {nextWord.wordCorrectCount} times.</p>
+        <p className='co incorrect_count'>You have answered this word incorrectly {nextWord.wordIncorrectCount} times.</p>
         </form>}
          
          {answer && <div className='showAns'><h2 className={color}>{message}</h2><session className='DisplayFeedback'><p>The correct translation for {nextWord.nextWord} was {answer} and you chose {guess}!</p></session>
