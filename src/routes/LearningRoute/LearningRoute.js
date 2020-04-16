@@ -34,7 +34,7 @@ class LearningRoute extends Component {
 
     postAns=(guessWord)=>{
       let word = JSON.stringify({
-        guess: guessWord
+        guess: guessWord.toLowerCase()
       })
       return fetch(`${config.API_ENDPOINT}/language/guess`, {
         method:'POST',
