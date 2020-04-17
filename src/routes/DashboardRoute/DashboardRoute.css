@@ -1,6 +1,8 @@
-.ready{
+
+.ready{   
   color:orangered
 }
+
 @media screen and (min-width: 481px){
   .background{
     background-image: url('/image/chinese.jpg');
@@ -14,4 +16,6 @@
       padding-top: 50px;
       text-shadow: 2px 2px 5px black;
   }
+   
+  
 }

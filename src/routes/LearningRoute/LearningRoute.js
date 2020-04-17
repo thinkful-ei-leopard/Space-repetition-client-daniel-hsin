@@ -136,7 +136,7 @@ class LearningRoute extends Component {
         {error && <p>{error}</p>}
         {showForm && 
         <form onSubmit={this.handleSubmit}>
-        <h2>Translate the word:</h2><span className='one showWord'>{nextWord.nextWord}</span>
+        <h2 className='toStart'>Translate the word:</h2><span className='one showWord'>{nextWord.nextWord}</span>
         <Label htmlFor='learn-guess-input'>What's the translation for this word?
         </Label><br></br>
         <Input type='text' id='learn-guess-input' name='guessWord' value={guess} onChange={this.changeValue} required></Input>

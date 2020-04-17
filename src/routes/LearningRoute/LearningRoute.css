@@ -3,17 +3,18 @@ form{
     margin-top:20px;
 }
 .showAns{
-    margin: 50px 0;
+    margin: 40px 0;
 }
 .green{
-    color: green
+    color: green;   
 }
 .red{
     color:red;
 }
+
 .one{
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 20px;
     margin: 5px;
 }
 .showWord{
@@ -21,7 +22,7 @@ form{
     color:#D13400;
 }
 .co{
-    margin: 25px auto;
+    margin: 20px 10px;
 }
 .ans{
     color: #057B05;
@@ -32,5 +33,32 @@ form{
    
 }
 .DisplayFeedback{
-    margin: 50px auto;
+    font-size: 16px;
+    margin: 30px 8px;
+}
+.toStart{
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+label{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+@media screen and (min-width: 481px){
+    .toStart{
+        font-size: 33px;
+    }
+    .one{
+        font-size: 25px;  
+    }
+    .showAns{
+        margin: 50px 0;
+    }
+    .co{
+        margin: 25px auto;
+    }
+    .DisplayFeedback{
+        margin: 50px auto;
+    }
 }

@@ -23,13 +23,20 @@ main{
 h2{
     color: #D13400;
     font-family: 'Russo One', sans-serif;
-    font-size: 30px;
+    font-size: 22px;
+    padding:0 8px;
 }
 
 @media screen and (min-width: 481px){
    body{
     text-align: left;
    }
+   h2{
+    color: #D13400;
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+}
+
    
  }
   

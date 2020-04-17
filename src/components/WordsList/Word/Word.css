@@ -1,15 +1,16 @@
 .correct_count {
     color: rgb(5, 123, 5);
+    font-size: 14px;
 }
 
 .incorrect_count {
     color: rgb(197, 22, 22);
+    font-size: 14px;
 }
 li{
     margin: 25px auto;
     padding: 15px ;
     background-color: #F9E6E6;
-    
 }
 .count,li span{
     display: inline-block;
@@ -31,7 +32,8 @@ li{
     padding: 0 5px;  
 }
 
-@media screen and (min-width: 481px){
+
+@media screen and (min-width: 481px){  
     
     li{
         max-width: 650px;
@@ -44,6 +46,7 @@ li{
     }
     .count{
         float: right;  
+        font-size: 16px;
     }
     .word{
         float:left;
