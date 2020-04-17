@@ -1,24 +1,24 @@
 .correct_count {
-    color: rgb(5, 170, 5);
+    color: rgb(5, 123, 5);
 }
 
 .incorrect_count {
-    color: rgb(218, 23, 23);
+    color: rgb(197, 22, 22);
 }
 li{
     margin: 25px auto;
     padding: 15px ;
-    background-color:  #f7dfdf;
+    background-color: #F8E2E2;
     
 }
 .count,li span{
     display: inline-block;
-    background-color:  #f7dfdf;
+    background-color: #F8E2E2;
 }
 
 .word{
     font-size: 20px;
-    background-color:  #f7dfdf;
+    background-color: #F8E2E2;
 }
 .original{
    margin-top: 0;
@@ -38,11 +38,11 @@ li{
         margin-left: auto;
         margin-right: auto;
         padding: 15px 15px 60px 15px;
-        background-color:  #f7dfdf;
+        background-color:  #F8E2E2;
     }
     .count,li span{
         display: inline-block;
-        background-color: #f7dfdf;
+        background-color: #F8E2E2;
     }
     .count{
         float: right;  

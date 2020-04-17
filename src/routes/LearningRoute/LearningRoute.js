@@ -97,6 +97,7 @@ class LearningRoute extends Component {
     this.setState({
       answer:null,
       showForm:true,
+      guess:''
     })
     
     this.getWord()

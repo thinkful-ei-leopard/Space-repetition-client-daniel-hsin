@@ -40,7 +40,7 @@ class DashboardRoute extends Component {
           "error": "Unauthorized request"
       }) {
           this.handleUnauthorizedRequest()
-        }
+      }
         return Promise.reject('Error fetching language and words from server');
       })
       .catch(err => {
