@@ -1,4 +1,6 @@
-
+.ready{
+  color:orangered
+}
 @media screen and (min-width: 481px){
   .background{
     background-image: url('/image/chinese.jpg');
