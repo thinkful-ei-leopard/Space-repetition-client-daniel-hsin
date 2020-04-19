@@ -1,5 +1,7 @@
 # Spaced Repetition Capstone
 
+CO-Contributors: Daniel Fong, Hsin Ling Hu
+
 ## Setup
 
 To setup the application
